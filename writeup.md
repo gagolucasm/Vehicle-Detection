@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image4]: ./examples/cell.png
 [image5]: ./examples/color.png
 [image6]: ./examples/final.png
-[image7]: ./examples/grid.jpg
+[image7]: ./examples/grid.png
 [image8]: ./examples/heat.png
 [image8]: ./examples/label.png
 [image10]: ./examples/simple.png
