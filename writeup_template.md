@@ -42,21 +42,35 @@ You're reading it!
 
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` (left) and `non-vehicle` (right) classes:
+
 <div style="text-align:center">
+
 ![alt text][image1]
+
 <img src ="..." /></div>
+
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 I ploted the difference between orientation values:
+
 <div style="text-align:center">
+
 ![alt text][image2]
+
 <img src ="..." /></div>
+
 Pixels per cell value:
+
 <div style="text-align:center">
+
 ![alt text][image3]
+
 <img src ="..." /></div>
+
 And color spaces:
+
 <div style="text-align:center">
+
 ![alt text][image5]
 
 <img src ="..." /></div>
@@ -109,27 +123,43 @@ Later, I optimize SVC and MLP( using `GridSearchCV` with selected parameters), g
 
 **Optimization**
 Tuned model has a training accuracy score of 0.9932.
+
 Tuned model has a testing accuracy score of 0.9917.
+
 The best parameters are {'gamma': 5e-05, 'kernel': 'rbf', 'C': 2}
+
 CPU times: user 49min 14s, sys: 0 ns, total: 49min 14s
+
 Wall time: 49min 14s
+
 **Full Dataset**
+
 17.32 Seconds to train SVC...
+
 Test Accuracy of SVC =  0.9958
+
 21.62 Seconds to test accuracy...
+
 
 ### MLP
 **Optimization**
 
 Tuned model has a training accuracy score of 0.9940.
+
 Tuned model has a testing accuracy score of 0.9885.
+
 The best parameters are {'activation': 'logistic', 'solver': 'lbfgs', 'alpha': 1}
+
 Wall time: 25min 35s
+
 **Full Dataset**
 
 22.87 Seconds to train SVC...
+
 Test Accuracy of SVC =  0.9979
+
 22.91 Seconds to test accuracy...
+
 
 [Multilayer Perceptron Classifier](https://en.wikipedia.org/wiki/Multilayer_perceptron) is the best fit for this problem as we can see.
 
@@ -142,13 +172,19 @@ Test Accuracy of SVC =  0.9979
 With the function `slide_window`, I get a list of all the windows I need, between some y limits (no cars in the sky). 
 
 <div style="text-align:center">
+
 ![alt text][image7]
+
 <img src ="..." /></div>
+
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. I made a heatmap to avoid false positives. Here is an example:
+
 <div style="text-align:center">
+
 ![alt text][image10]
+
 <img src ="..." /></div>
 
 ### Video Implementation
@@ -158,13 +194,21 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 Here's a [link to my video result](./output.mp4). Most of the time it works right, but there is room for improvement.
 
 
+<div style="text-align:center">
+
+![alt text][video1]
+
+<img src ="..." /></div>
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. With the class `Processor` I accumulate positive windows and make a heatmap of 5 frames. This helps to get rid of false positives.
 
 ### Here are six frames and their corresponding heatmaps:
+
 <div style="text-align:center">
+
 ![alt text][image8]
+
 <img src ="..." /></div>
 
 
