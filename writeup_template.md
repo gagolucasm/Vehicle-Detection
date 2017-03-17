@@ -23,7 +23,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/grid.jpg
 [image8]: ./examples/heat.png
 [image8]: ./examples/label.png
-[image01]: ./examples/simple.png
+[image10]: ./examples/simple.png
 [video1]: ./output.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -189,8 +189,6 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 Here's a [link to my video result](./output.mp4). Most of the time it works right, but there is room for improvement.
 
 
-
-![alt text][video1]
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
