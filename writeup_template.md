@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_nocar.png
+[image1]: ./examples/car_nocars.png
 [image2]: ./examples/orient.png
 [image3]: ./examples/pixels.png
 [image4]: ./examples/cell.png
@@ -42,24 +42,24 @@ You're reading it!
 
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` (left) and `non-vehicle` (right) classes:
-
+<div style="text-align:center">
 ![alt text][image1]
-
+<img src ="..." /></div>
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 I ploted the difference between orientation values:
-
+<div style="text-align:center">
 ![alt text][image2]
-
+<img src ="..." /></div>
 Pixels per cell value:
-
+<div style="text-align:center">
 ![alt text][image3]
-
+<img src ="..." /></div>
 And color spaces:
-
+<div style="text-align:center">
 ![alt text][image5]
 
-
+<img src ="..." /></div>
 
 
 
@@ -141,15 +141,15 @@ Test Accuracy of SVC =  0.9979
 
 With the function `slide_window`, I get a list of all the windows I need, between some y limits (no cars in the sky). 
 
-
+<div style="text-align:center">
 ![alt text][image7]
-
+<img src ="..." /></div>
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. I made a heatmap to avoid false positives. Here is an example:
-
+<div style="text-align:center">
 ![alt text][image10]
----
+<img src ="..." /></div>
 
 ### Video Implementation
 
@@ -163,9 +163,9 @@ Here's a [link to my video result](./output.mp4). Most of the time it works righ
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions. With the class `Processor` I accumulate positive windows and make a heatmap of 5 frames. This helps to get rid of false positives.
 
 ### Here are six frames and their corresponding heatmaps:
-
+<div style="text-align:center">
 ![alt text][image8]
-
+<img src ="..." /></div>
 
 
 ---
